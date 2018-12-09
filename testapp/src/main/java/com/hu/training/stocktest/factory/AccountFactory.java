@@ -20,14 +20,13 @@ public class AccountFactory {
 		this.basketList = basketList;
 	}
 
-	public void createAccount(String id, String type, String name, Long value) {
+	public void createAccount(String id, ContentType contentType, String name, Long value) {
 		Account a = accountMap.get(id);
 		if(a == null) {
 			a = new Account(id);
 			accountMap.put(id, a);
 		}
-		ContentType ct = ContentType.valueOf(type);
-		switch(ct) {
+		switch(contentType) {
 		case BASKET:
 			Basket b = findBasket(name);
 			addBasket(a, b, value);
@@ -54,14 +53,17 @@ public class AccountFactory {
 		for(Content c: basket.getContentList().getContent()){
 			String name = c.getSymbol();
 			Long sum = c.getQuantity().longValue() * value;
-			if(c.getType().equals("BASKET")) {
+			ContentType ct = ContentType.valueOf(c.getType());
+			switch(ct) {
+			case BASKET:
 				addBasket(account, findBasket(name), sum);
-			}
-			else if(c.getType().equals("STOCK")){
+				break;
+			case STOCK:
 				account.addStock(name, sum);
-			}
-			else if(c.getType().equals("BOND")){
+				break;
+			case BOND:
 				account.addBond(name, sum);
+				break;
 			}
 		}
 	}

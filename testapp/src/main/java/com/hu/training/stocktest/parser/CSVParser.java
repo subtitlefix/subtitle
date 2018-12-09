@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 
+import com.hu.training.stocktest.enums.ContentType;
 import com.hu.training.stocktest.factory.AccountFactory;
 
 public class CSVParser {
@@ -41,8 +42,8 @@ public class CSVParser {
 		String[] tokens = line.split(",");
 		if(tokens.length == 4) {
 			try {
-				accountFactory.createAccount(tokens[0], tokens[1], tokens[2], Long.parseLong(tokens[3]));
-			} catch (NumberFormatException e) {
+				accountFactory.createAccount(tokens[0], ContentType.valueOf(tokens[1]), tokens[2], Long.parseLong(tokens[3]));
+			} catch (IllegalArgumentException e) {
 				System.out.println("invalid line in csv:" + line);
 			}
 		}
