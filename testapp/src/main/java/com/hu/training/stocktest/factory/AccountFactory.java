@@ -76,6 +76,7 @@ public class AccountFactory {
 		}
 		return sum;
 	}
+	
 	public int allStockCount(String stockname) {
 		int sum = 0;
 		for(Entry<String, Account> entry: accountMap.entrySet()) {
