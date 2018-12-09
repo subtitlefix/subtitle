@@ -1,0 +1,68 @@
+<basketList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="content.xsd">
+	<basket name="basket1">
+		<contentList>
+			<content type="BOND">
+				<symbol>Bond1</symbol>
+				<quantity>500</quantity>
+			</content>
+			<content type="BOND">
+				<symbol>Bond2</symbol>
+				<quantity>200</quantity>
+			</content>
+		</contentList>
+	</basket>
+	<basket name="basket2">
+		<contentList>
+			<content type="STOCK">
+				<symbol>Stock1</symbol>
+				<quantity>1000</quantity>
+			</content>
+			<content type="BOND">
+				<symbol>Bond1</symbol>
+				<quantity>2000</quantity>
+			</content>
+		</contentList>
+	</basket>
+	<basket name="basket3">
+		<contentList>
+			<content type="BOND">
+				<symbol>Bond2</symbol>
+				<quantity>800</quantity>
+			</content>
+			<content type="STOCK">
+				<symbol>Stock3</symbol>
+				<quantity>1500</quantity>
+			</content>
+		</contentList>
+	</basket>
+	<basket name="basket4">
+		<contentList>
+			<content type="STOCK">
+				<symbol>Stock4</symbol>
+				<quantity>2500</quantity>
+			</content>
+			<content type="BOND">
+				<symbol>Bond3</symbol>
+				<quantity>1500</quantity>
+			</content>
+		</contentList>
+	</basket>
+	<basket name="basket5">
+		<contentList>
+			<content type="BOND">
+				<symbol>Bond4</symbol>
+				<quantity>2</quantity>
+			</content>
+			<content type="BASKET">
+				<symbol>basket2</symbol>
+				<quantity>2</quantity>
+			</content>
+			<content type="BASKET">
+				<symbol>basket1</symbol>
+				<quantity>15</quantity>
+			</content>
+		</contentList>
+	</basket>
+</basketList>
+
